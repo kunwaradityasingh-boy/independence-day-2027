@@ -59,7 +59,7 @@ independence-day-2027/
         └── dkfilms-vande-matram-violin-background-music-268744.mp3
 ```
 
-🎨 Design
+## 🎨 Design
 
 The website uses a cinematic dark interface inspired by the Indian tricolor.
 
@@ -70,20 +70,19 @@ The website uses a cinematic dark interface inspired by the Indian tricolor.
 
 The interface combines gradients, glassmorphism, glow effects, animations and responsive layouts.
 
-📜 Historical Journey
+## 📜 Historical Journey
 
 The timeline highlights important milestones from India's freedom struggle:
 
-Year	Event
-1857	First War of Independence
-1919	Jallianwala Bagh
-1930	Dandi March
-1942	Quit India Movement
-1947	India's Independence
-2027	80 Years of Independence
+- Year	Event
+- 1857	First War of Independence
+- 1919	Jallianwala Bagh
+- 1930	Dandi March
+- 1942	Quit India Movement
+- 1947	India's Independence
+- 2027	80 Years of Independence
 
-
-🚀 Getting Started
+## 🚀 Getting Started
 Clone the repository
 git clone https://github.com/kunwaradityasingh-boy/independence-day-2027.git
 Open the project
@@ -94,28 +93,27 @@ Open index.html in your browser.
 
 For development, you can also use VS Code + Live Server.
 
-🌐 Live Website
+## 🌐 Live Website
 
 The project can be hosted using GitHub Pages.
 
 Live deployment will be added after the final GitHub Pages setup.
 
-🎯 Project Goals
+## 🎯 Project Goals
 
 The goal of this project is to create a modern digital Independence Day experience that combines:
 
 🇮🇳 Indian history and patriotism
-🎨 Modern web design
-⚡ Interactive user experience
-📱 Responsive development
-💻 Front-end development skills
-✨ Animation and visual effects
+## 🎨 Modern web design
+- ⚡ Interactive user experience
+- 📱 Responsive development
+- 💻 Front-end development skills
+- ✨ Animation and visual effects
 
-
-👨‍💻 Developer
-Kunwar Aditya Singh
-B.Tech — Computer Science Engineering
-(Artificial Intelligence & Data Science)
+## 👨‍💻 Developer
+ - Kunwar Aditya Singh
+ - B.Tech — Computer Science Engineering
+ - (Artificial Intelligence & Data Science)
 
 🇮🇳 Jai Hind
 
@@ -123,7 +121,7 @@ Celebrating India's freedom, remembering its heroes, and looking towards its fut
 
 Happy 80th Independence Day, India! 🇮🇳
 
-📄 License
+## 📄 License
 This project is created for educational and portfolio purposes.
 **Bas isko `README.md` me paste → Save → push.**
 ```bash
