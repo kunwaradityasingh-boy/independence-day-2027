@@ -60,6 +60,42 @@
     });
 
     /* =================================================
+       CLOSE MOBILE MENU ON OUTSIDE CLICK
+    ================================================= */
+
+    document.addEventListener("click", function (event) {
+      if (!navMenu || !menuToggle) {
+        return;
+      }
+
+      const clickedInsideMenu = navMenu.contains(event.target);
+
+      const clickedToggle = menuToggle.contains(event.target);
+
+      if (!clickedInsideMenu && !clickedToggle) {
+        navMenu.classList.remove("open");
+
+        menuToggle.classList.remove("open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    /* =================================================
+       CLOSE MOBILE MENU ON RESIZE
+    ================================================= */
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 768 && navMenu && menuToggle) {
+        navMenu.classList.remove("open");
+
+        menuToggle.classList.remove("open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    /* =================================================
            NAVBAR
         ================================================= */
 
@@ -216,6 +252,92 @@
     }
 
     /* =================================================
+           SCROLL REVEAL ANIMATION
+        ================================================= */
+
+    const revealElements = document.querySelectorAll(
+      ".section-heading, .about-card, .stat, .timeline-item, .hero-card, .celebration-content, .message-box",
+    );
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver(
+        function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) {
+              return;
+            }
+
+            entry.target.classList.add("revealed");
+
+            observer.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.12,
+          rootMargin: "0px 0px -50px 0px",
+        },
+      );
+
+      revealElements.forEach(function (element) {
+        element.classList.add("reveal");
+
+        revealObserver.observe(element);
+      });
+    } else {
+      revealElements.forEach(function (element) {
+        element.classList.add("revealed");
+      });
+    }
+
+    /* =================================================
+       HERO MOUSE PARALLAX
+    ================================================= */
+
+    const heroSection = document.querySelector(".hero");
+
+    const heroGlowOne = document.querySelector(".hero-glow-one");
+
+    const heroGlowTwo = document.querySelector(".hero-glow-two");
+
+    const heroChakra = document.querySelector(".hero-chakra");
+
+    if (heroSection && window.matchMedia("(pointer: fine)").matches) {
+      heroSection.addEventListener("mousemove", function (event) {
+        const rect = heroSection.getBoundingClientRect();
+
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+        if (heroGlowOne) {
+          heroGlowOne.style.transform = `translate(${x * 18}px, ${y * 12}px)`;
+        }
+
+        if (heroGlowTwo) {
+          heroGlowTwo.style.transform = `translate(${x * -14}px, ${y * -10}px)`;
+        }
+
+        if (heroChakra) {
+          heroChakra.style.transform = `translate(${x * 10}px, ${y * 8}px)`;
+        }
+      });
+
+      heroSection.addEventListener("mouseleave", function () {
+        if (heroGlowOne) {
+          heroGlowOne.style.transform = "";
+        }
+
+        if (heroGlowTwo) {
+          heroGlowTwo.style.transform = "";
+        }
+
+        if (heroChakra) {
+          heroChakra.style.transform = "";
+        }
+      });
+    }
+
+    /* =================================================
            CELEBRATION POPUP
         ================================================= */
 
@@ -315,8 +437,26 @@
 
     if (messageInput) {
       messageInput.addEventListener("input", function () {
-        if (characterCount) {
-          characterCount.textContent = messageInput.value.length;
+        if (!characterCount) {
+          return;
+        }
+
+        const length = messageInput.value.length;
+
+        characterCount.textContent = length;
+
+        characterCount.classList.remove(
+          "counter-warning",
+          "counter-danger",
+          "counter-limit",
+        );
+
+        if (length >= 300) {
+          characterCount.classList.add("counter-limit");
+        } else if (length >= 270) {
+          characterCount.classList.add("counter-danger");
+        } else if (length >= 200) {
+          characterCount.classList.add("counter-warning");
         }
       });
     }

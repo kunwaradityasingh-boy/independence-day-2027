@@ -2203,41 +2203,1813 @@ footer .container {
 ========================================= */
 
 .firework {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 100000;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100000;
 
-    background: #ff9933;
+  background: #ff9933;
 
-    box-shadow:
-        0 -45px 0 #ff9933,
-        0 45px 0 #138808,
-        45px 0 0 #ffffff,
-        -45px 0 0 #ffffff,
-        32px 32px 0 #ff9933,
-        -32px 32px 0 #138808,
-        32px -32px 0 #ffffff,
-        -32px -32px 0 #ff9933;
+  box-shadow:
+    0 -45px 0 #ff9933,
+    0 45px 0 #138808,
+    45px 0 0 #ffffff,
+    -45px 0 0 #ffffff,
+    32px 32px 0 #ff9933,
+    -32px 32px 0 #138808,
+    32px -32px 0 #ffffff,
+    -32px -32px 0 #ff9933;
 
-    animation: fireworkBurst 1.4s ease-out forwards;
+  animation: fireworkBurst 1.4s ease-out forwards;
 }
 
 @keyframes fireworkBurst {
-    0% {
-        transform: scale(0.1);
-        opacity: 1;
-    }
+  0% {
+    transform: scale(0.1);
+    opacity: 1;
+  }
 
-    35% {
-        transform: scale(1);
-        opacity: 1;
-    }
+  35% {
+    transform: scale(1);
+    opacity: 1;
+  }
 
-    100% {
-        transform: scale(1.5);
-        opacity: 0;
-    }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+/* =========================================
+   PHASE 5.1 — PREMIUM HERO POLISH
+========================================= */
+
+.hero {
+  background: radial-gradient(
+    circle at 50% 42%,
+    rgba(255, 255, 255, 0.035),
+    transparent 28%
+  );
+}
+
+.hero::before {
+  background:
+    radial-gradient(
+      circle at 50% 18%,
+      rgba(255, 153, 51, 0.22),
+      transparent 32%
+    ),
+    radial-gradient(circle at 50% 78%, rgba(19, 136, 8, 0.12), transparent 35%),
+    linear-gradient(180deg, #040b15 0%, #071626 52%, #050f0b 100%);
+}
+
+.hero-glow {
+  opacity: 0.24;
+  filter: blur(90px);
+}
+
+.hero-glow-one {
+  box-shadow: 0 0 100px rgba(255, 153, 51, 0.2);
+}
+
+.hero-glow-two {
+  box-shadow: 0 0 100px rgba(19, 136, 8, 0.18);
+}
+
+.hero h1 {
+  text-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.45),
+    0 18px 55px rgba(0, 0, 0, 0.35);
+}
+
+.hero h1 span {
+  filter: drop-shadow(0 8px 25px rgba(255, 153, 51, 0.12));
+}
+
+.hero-badge {
+  background: rgba(255, 255, 255, 0.065);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.countdown-box {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.085),
+    rgba(255, 255, 255, 0.035)
+  );
+
+  border-color: rgba(255, 255, 255, 0.17);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.countdown-box:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(255, 153, 51, 0.38);
+
+  box-shadow:
+    0 22px 55px rgba(0, 0, 0, 0.32),
+    0 0 25px rgba(255, 153, 51, 0.08);
+}
+
+.countdown-box span {
+  text-shadow: 0 5px 20px rgba(255, 255, 255, 0.12);
+}
+
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+  transition: left 0.55s ease;
+}
+
+.btn-primary:hover::before {
+  left: 140%;
+}
+
+.hero-chakra {
+  opacity: 0.075;
+  filter: drop-shadow(0 0 30px rgba(0, 0, 128, 0.3));
+}
+
+@media (max-width: 700px) {
+  .countdown {
+    gap: 5px;
+  }
+
+  .countdown-box {
+    min-width: 68px;
+    padding: 13px 8px;
+  }
+
+  .countdown-box span {
+    font-size: 24px;
+  }
+
+  .countdown-separator {
+    font-size: 20px;
+  }
+}
+/* =========================================
+   PHASE 5.2 — PREMIUM NAVBAR
+========================================= */
+
+#navbar {
+  background: rgba(4, 11, 21, 0.72);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.18),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+#navbar.scrolled {
+  background: rgba(4, 11, 21, 0.92);
+
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+}
+
+#navbar .nav-link {
+  position: relative;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+#navbar .nav-link:hover {
+  transform: translateY(-1px);
+}
+
+#navbar .nav-link::after {
+  height: 2px;
+  border-radius: 10px;
+
+  box-shadow: 0 0 10px rgba(255, 153, 51, 0.35);
+}
+
+/* Navbar logo glow */
+
+#navbar .logo,
+#navbar .navbar-brand {
+  filter: drop-shadow(0 4px 12px rgba(255, 153, 51, 0.12));
+}
+
+/* Mobile menu button */
+
+#menuToggle {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+#menuToggle:hover {
+  transform: scale(1.04);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 153, 51, 0.3);
+}
+/* =========================================
+   PHASE 5.3 — PREMIUM COUNTDOWN
+========================================= */
+
+.countdown {
+  position: relative;
+}
+
+.countdown-box {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 153, 51, 0.1),
+    rgba(255, 255, 255, 0.045) 45%,
+    rgba(19, 136, 8, 0.08)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.countdown-box::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 153, 51, 0.65),
+    transparent
+  );
+
+  opacity: 0.8;
+}
+
+.countdown-box::after {
+  content: "";
+
+  position: absolute;
+  width: 80px;
+  height: 80px;
+
+  top: -45px;
+  right: -35px;
+
+  background: rgba(255, 153, 51, 0.1);
+  border-radius: 50%;
+
+  filter: blur(18px);
+}
+
+.countdown-box span {
+  position: relative;
+  z-index: 2;
+
+  font-weight: 800;
+
+  text-shadow: 0 4px 18px rgba(255, 255, 255, 0.15);
+}
+
+.countdown-box small {
+  position: relative;
+  z-index: 2;
+
+  letter-spacing: 1.5px;
+  opacity: 0.8;
+}
+
+.countdown-separator {
+  color: #ffcc33;
+
+  text-shadow: 0 0 12px rgba(255, 204, 51, 0.45);
+}
+
+.countdown-box:hover {
+  transform: translateY(-6px) scale(1.02);
+
+  border-color: rgba(255, 153, 51, 0.38);
+
+  box-shadow:
+    0 22px 50px rgba(0, 0, 0, 0.32),
+    0 0 25px rgba(255, 153, 51, 0.08);
+}
+/* =========================================
+   PHASE 5.4 — ABOUT + STATS PREMIUM POLISH
+========================================= */
+
+.about-card {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.075),
+    rgba(255, 255, 255, 0.025)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.about-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ff9933,
+    #ffffff,
+    #138808,
+    transparent
+  );
+
+  opacity: 0.65;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(255, 153, 51, 0.25);
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(255, 153, 51, 0.06);
+}
+
+.about-card h3 {
+  text-shadow: 0 4px 15px rgba(255, 255, 255, 0.08);
+}
+
+.about-card p {
+  line-height: 1.8;
+}
+
+/* ---------- STATS ---------- */
+
+.stat-card {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.07),
+    rgba(255, 255, 255, 0.025)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.stat-card::after {
+  content: "";
+
+  position: absolute;
+  width: 100px;
+  height: 100px;
+
+  top: -55px;
+  right: -45px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 153, 51, 0.08);
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+.stat-card:hover {
+  transform: translateY(-7px) scale(1.015);
+
+  border-color: rgba(255, 204, 51, 0.25);
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.3),
+    0 0 25px rgba(255, 204, 51, 0.06);
+}
+
+.stat-card strong {
+  position: relative;
+  z-index: 2;
+
+  text-shadow: 0 5px 20px rgba(255, 255, 255, 0.12);
+}
+
+.stat-card span {
+  position: relative;
+  z-index: 2;
+}
+/* =========================================
+   PHASE 5.5 — PREMIUM HISTORY TIMELINE
+========================================= */
+
+.timeline {
+  position: relative;
+}
+
+/* Timeline center line */
+
+.timeline::before {
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(255, 153, 51, 0.75),
+    rgba(255, 255, 255, 0.55),
+    rgba(19, 136, 8, 0.75),
+    transparent
+  );
+
+  box-shadow: 0 0 15px rgba(255, 153, 51, 0.08);
+}
+
+/* Timeline items */
+
+.timeline-item {
+  position: relative;
+}
+
+/* Timeline cards */
+
+.timeline-content {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.075),
+    rgba(255, 255, 255, 0.025)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.timeline-content::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(90deg, #ff9933, #ffffff, #138808);
+
+  opacity: 0.65;
+}
+
+.timeline-content:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(255, 153, 51, 0.28);
+
+  box-shadow:
+    0 25px 55px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(255, 153, 51, 0.06);
+}
+
+/* Timeline year */
+
+.timeline-year {
+  text-shadow: 0 4px 18px rgba(255, 153, 51, 0.15);
+}
+
+/* Timeline dots */
+
+.timeline-dot {
+  box-shadow:
+    0 0 0 5px rgba(255, 255, 255, 0.035),
+    0 0 20px rgba(255, 153, 51, 0.22);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+  transform: scale(1.15);
+
+  box-shadow:
+    0 0 0 6px rgba(255, 255, 255, 0.04),
+    0 0 28px rgba(255, 153, 51, 0.35);
+}
+/* =========================================
+   PHASE 5.6 — PREMIUM HEROES CARDS
+========================================= */
+
+.hero-card {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.025)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* Tricolor top accent */
+
+.hero-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ff9933,
+    #ffffff,
+    #138808,
+    transparent
+  );
+
+  opacity: 0.7;
+}
+
+/* Soft background glow */
+
+.hero-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 130px;
+  height: 130px;
+
+  right: -70px;
+  bottom: -70px;
+
+  border-radius: 50%;
+
+  background: rgba(19, 136, 8, 0.1);
+
+  filter: blur(25px);
+
+  pointer-events: none;
+}
+
+.hero-card:hover {
+  transform: translateY(-10px);
+
+  border-color: rgba(255, 153, 51, 0.3);
+
+  box-shadow:
+    0 28px 60px rgba(0, 0, 0, 0.32),
+    0 0 35px rgba(255, 153, 51, 0.07);
+}
+
+/* Hero image / visual */
+
+.hero-card img {
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.hero-card:hover img {
+  transform: scale(1.04);
+
+  filter: brightness(1.06) saturate(1.08);
+}
+
+/* Hero name */
+
+.hero-card h3 {
+  position: relative;
+  z-index: 2;
+
+  text-shadow: 0 4px 18px rgba(255, 255, 255, 0.08);
+}
+
+/* Hero description */
+
+.hero-card p {
+  position: relative;
+  z-index: 2;
+
+  line-height: 1.75;
+}
+
+/* Card content */
+
+.hero-card .hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Small tricolor divider */
+
+.hero-card .hero-content::after {
+  content: "";
+
+  display: block;
+
+  width: 45px;
+  height: 2px;
+
+  margin-top: 14px;
+
+  background: linear-gradient(90deg, #ff9933, #ffffff, #138808);
+
+  border-radius: 10px;
+
+  opacity: 0.7;
+}
+/* =========================================
+   PHASE 5.7 — PREMIUM CELEBRATION SECTION
+========================================= */
+
+.celebration-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Flag container */
+
+.flag-display {
+  position: relative;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35),
+    0 0 45px rgba(255, 153, 51, 0.08);
+
+  transform-origin: center;
+}
+
+/* Flag glow */
+
+.flag-display::before {
+  content: "";
+
+  position: absolute;
+  inset: -20px;
+
+  border-radius: 25px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 153, 51, 0.12),
+    transparent 45%,
+    rgba(19, 136, 8, 0.1)
+  );
+
+  filter: blur(25px);
+
+  z-index: -1;
+}
+
+/* Flag stripes */
+
+.flag-stripe {
+  position: relative;
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* Chakra */
+
+.flag-chakra {
+  filter: drop-shadow(0 0 8px rgba(0, 0, 128, 0.35))
+    drop-shadow(0 0 18px rgba(0, 0, 128, 0.15));
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.flag-display:hover .flag-chakra {
+  transform: rotate(15deg) scale(1.04);
+
+  filter: drop-shadow(0 0 12px rgba(0, 0, 128, 0.45))
+    drop-shadow(0 0 25px rgba(0, 0, 128, 0.2));
+}
+
+/* Celebration buttons */
+
+#celebrateBtn,
+#musicBtn {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+#celebrateBtn:hover,
+#musicBtn:hover {
+  transform: translateY(-4px);
+}
+
+/* Celebration section text */
+
+.celebration-section h2 {
+  text-shadow: 0 5px 25px rgba(255, 255, 255, 0.1);
+}
+
+.celebration-section p {
+  line-height: 1.8;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .flag-display {
+    max-width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .flag-display::before {
+    inset: -12px;
+  }
+}
+/* =========================================
+   PHASE 5.8 — PREMIUM MESSAGE SECTION
+========================================= */
+
+.message-box {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.075),
+    rgba(255, 255, 255, 0.025)
+  );
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.message-box::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ff9933,
+    #ffffff,
+    #138808,
+    transparent
+  );
+
+  opacity: 0.7;
+}
+
+/* Form fields */
+
+.message-box input,
+.message-box textarea {
+  background: rgba(255, 255, 255, 0.045);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.message-box input:focus,
+.message-box textarea:focus {
+  background: rgba(255, 255, 255, 0.065);
+
+  border-color: rgba(255, 153, 51, 0.55);
+
+  box-shadow:
+    0 0 0 3px rgba(255, 153, 51, 0.08),
+    0 8px 25px rgba(0, 0, 0, 0.12);
+
+  outline: none;
+}
+
+/* Character counter */
+
+#characterCount {
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Success message */
+
+#messageSuccess {
+  animation: message-success 0.45s ease both;
+}
+
+@keyframes message-success {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Send button */
+
+#messageForm .btn-primary {
+  box-shadow: 0 10px 30px rgba(255, 153, 51, 0.12);
+}
+
+#messageForm .btn-primary:hover {
+  box-shadow: 0 15px 38px rgba(255, 153, 51, 0.2);
+}
+/* =========================================
+   PHASE 5.9 — PREMIUM FOOTER
+========================================= */
+
+.footer {
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(180deg, #050d17 0%, #030810 100%);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 -15px 45px rgba(0, 0, 0, 0.2);
+}
+
+/* Subtle tricolor glow */
+
+.footer::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 2px;
+
+  background: linear-gradient(90deg, #ff9933, #ffffff, #138808);
+
+  opacity: 0.65;
+}
+
+/* Footer flag */
+
+.footer-flag {
+  box-shadow: 0 0 25px rgba(255, 153, 51, 0.08);
+
+  border-radius: 10px;
+}
+
+/* Footer heading */
+
+.footer h3 {
+  text-shadow: 0 5px 20px rgba(255, 153, 51, 0.12);
+}
+
+/* Footer links */
+
+.footer-links a {
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.footer-links a:hover {
+  transform: translateY(-2px);
+}
+
+/* Footer bottom */
+
+.footer-bottom {
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom p {
+  opacity: 0.72;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .footer {
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+}
+/* =========================================
+   PHASE 5.10 — OVERALL VISUAL CONSISTENCY
+========================================= */
+
+/* ---------- SECTION CONSISTENCY ---------- */
+
+section {
+  position: relative;
+}
+
+.section-title {
+  text-shadow: 0 5px 25px rgba(255, 255, 255, 0.08);
+}
+
+.section-subtitle {
+  opacity: 0.82;
+}
+
+/* ---------- PREMIUM CARD CONSISTENCY ---------- */
+
+.about-card,
+.stat-card,
+.timeline-content,
+.hero-card,
+.message-box {
+  border-radius: 22px;
+}
+
+/* ---------- TRICOLOR ACCENT ---------- */
+
+.about-card::before,
+.hero-card::before,
+.message-box::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ff9933,
+    #ffffff,
+    #138808,
+    transparent
+  );
+}
+
+/* ---------- BUTTON CONSISTENCY ---------- */
+
+.btn {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+/* ---------- SMOOTH CARD HOVER ---------- */
+
+.about-card,
+.stat-card,
+.timeline-content,
+.hero-card {
+  will-change: transform;
+}
+
+/* ---------- SELECTION ---------- */
+
+::selection {
+  background: rgba(255, 153, 51, 0.35);
+  color: #ffffff;
+}
+
+/* ---------- SCROLLBAR ---------- */
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030810;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff9933, #ffffff, #138808);
+
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  filter: brightness(1.15);
+}
+
+/* ---------- ACCESSIBILITY ---------- */
+
+:focus-visible {
+  outline: 2px solid rgba(255, 153, 51, 0.75);
+  outline-offset: 3px;
+}
+
+/* ---------- MOBILE SAFETY ---------- */
+
+@media (max-width: 700px) {
+  .about-card,
+  .stat-card,
+  .timeline-content,
+  .hero-card,
+  .message-box {
+    border-radius: 18px;
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+}
+/* =========================================
+   PHASE 6.1 — HERO PORTRAITS
+========================================= */
+
+.hero-avatar {
+  position: relative;
+  overflow: hidden;
+
+  width: 110px;
+  height: 110px;
+
+  margin: 0 auto 20px;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(255, 255, 255, 0.45);
+
+  box-shadow:
+    0 0 25px rgba(255, 153, 51, 0.18),
+    0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.hero-avatar img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.45s ease,
+    filter 0.45s ease;
+}
+
+.hero-card:hover .hero-avatar img {
+  transform: scale(1.08);
+
+  filter: brightness(1.06) saturate(1.08);
+}
+
+.hero-card:hover .hero-avatar {
+  border-color: rgba(255, 153, 51, 0.65);
+
+  box-shadow:
+    0 0 30px rgba(255, 153, 51, 0.2),
+    0 10px 30px rgba(0, 0, 0, 0.3);
+}
+/* =========================================
+   PHASE 6.2 — HISTORY VISUAL POLISH
+========================================= */
+
+.timeline-year {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 76px;
+  height: 76px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 153, 51, 0.18),
+    rgba(255, 255, 255, 0.08),
+    rgba(19, 136, 8, 0.14)
+  );
+
+  border: 2px solid rgba(255, 255, 255, 0.22);
+
+  box-shadow:
+    0 0 25px rgba(255, 153, 51, 0.12),
+    0 10px 30px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  font-weight: 800;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.timeline-item:hover .timeline-year {
+  transform: scale(1.08);
+
+  border-color: rgba(255, 153, 51, 0.55);
+
+  box-shadow:
+    0 0 35px rgba(255, 153, 51, 0.22),
+    0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Highlight years */
+
+.timeline-item.highlight .timeline-year {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 153, 51, 0.25),
+    rgba(255, 255, 255, 0.1),
+    rgba(19, 136, 8, 0.22)
+  );
+
+  border-color: rgba(255, 204, 51, 0.45);
+
+  box-shadow:
+    0 0 35px rgba(255, 204, 51, 0.18),
+    0 12px 35px rgba(0, 0, 0, 0.28);
+}
+
+/* History content accent */
+
+.timeline-content h3 {
+  position: relative;
+}
+
+.timeline-content h3::after {
+  content: "";
+
+  display: block;
+
+  width: 42px;
+  height: 2px;
+
+  margin-top: 10px;
+
+  background: linear-gradient(90deg, #ff9933, #ffffff, #138808);
+
+  border-radius: 10px;
+
+  opacity: 0.75;
+}
+/* =========================================
+   PHASE 6.3 — PREMIUM INDIAN FLAG
+========================================= */
+
+.flag-display {
+  position: relative;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35),
+    0 0 45px rgba(255, 153, 51, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+  animation: flag-float 4s ease-in-out infinite;
+}
+
+.flag-stripe {
+  position: relative;
+  overflow: hidden;
+}
+
+.flag-stripe::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    105deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.12) 45%,
+    transparent 65%
+  );
+
+  transform: translateX(-120%);
+
+  animation: flag-shine 5s ease-in-out infinite;
+}
+
+.flag-stripe.saffron {
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.flag-stripe.white {
+  box-shadow:
+    inset 0 1px 0 rgba(0, 0, 0, 0.04),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.flag-stripe.green {
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.flag-chakra {
+  position: relative;
+  z-index: 2;
+
+  text-shadow: 0 0 10px rgba(0, 0, 128, 0.25);
+
+  animation: chakra-spin 12s linear infinite;
+}
+
+@keyframes flag-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes flag-shine {
+  0%,
+  55%,
+  100% {
+    transform: translateX(-120%);
+  }
+
+  75% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes chakra-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Respect reduced-motion preference */
+
+@media (prefers-reduced-motion: reduce) {
+  .flag-display,
+  .flag-chakra,
+  .flag-stripe::after {
+    animation: none;
+  }
+}
+/* =========================================
+   PHASE 6.3 — CELEBRATION VISUAL POLISH
+========================================= */
+
+.flag-display {
+  position: relative;
+  overflow: hidden;
+
+  transform-style: preserve-3d;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.35),
+    0 0 45px rgba(255, 153, 51, 0.1);
+
+  animation: flag-float 5s ease-in-out infinite;
+}
+
+/* Soft light passing across the flag */
+
+.flag-display::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -80%;
+
+  width: 45%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.18),
+    transparent
+  );
+
+  transform: skewX(-18deg);
+
+  animation: flag-shine 5s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+/* Flag floating motion */
+
+@keyframes flag-float {
+  0%,
+  100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+
+  50% {
+    transform: translateY(-5px) rotateX(1deg);
+  }
+}
+
+/* Light sweep */
+
+@keyframes flag-shine {
+  0% {
+    left: -80%;
+  }
+
+  45%,
+  100% {
+    left: 140%;
+  }
+}
+
+/* Chakra stays above the shine */
+
+.flag-chakra {
+  position: relative;
+  z-index: 3;
+
+  filter: drop-shadow(0 0 8px rgba(0, 0, 128, 0.35))
+    drop-shadow(0 0 18px rgba(0, 0, 128, 0.18));
+}
+
+/* Celebration action buttons */
+
+.celebration-actions .btn {
+  position: relative;
+  z-index: 5;
+}
+
+/* Popup premium depth */
+
+.celebration-message {
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.45),
+    0 0 50px rgba(255, 153, 51, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+/* =========================================
+   PHASE 6.4 — ASSET OPTIMIZATION
+========================================= */
+
+.hero-avatar img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  image-rendering: auto;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Prevent decorative visuals from affecting layout */
+
+.hero-avatar,
+.flag-display,
+.flag-chakra {
+  contain: paint;
+}
+
+/* Respect reduced-motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .flag-display {
+    animation: none;
+  }
+
+  .flag-display::after {
+    animation: none;
+  }
+
+  .hero-card,
+  .hero-card img,
+  .countdown-box,
+  .about-card,
+  .stat-card,
+  .timeline-content {
+    transition: none;
+  }
+}
+/* =========================================
+   PHASE 7.1 — SCROLL REVEAL
+========================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger card animations */
+
+.about-card:nth-child(2),
+.hero-card:nth-child(2),
+.timeline-item:nth-child(2) {
+  transition-delay: 0.08s;
+}
+
+.about-card:nth-child(3),
+.hero-card:nth-child(3),
+.timeline-item:nth-child(3) {
+  transition-delay: 0.16s;
+}
+
+.hero-card:nth-child(4),
+.timeline-item:nth-child(4) {
+  transition-delay: 0.24s;
+}
+
+.timeline-item:nth-child(5) {
+  transition-delay: 0.32s;
+}
+
+.timeline-item:nth-child(6) {
+  transition-delay: 0.4s;
+}
+
+/* Respect reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+/* =========================================
+   PHASE 7.2 — HERO PARALLAX
+========================================= */
+
+.hero-glow-one,
+.hero-glow-two,
+.hero-chakra {
+  transition: transform 0.25s ease-out;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-glow-one,
+  .hero-glow-two,
+  .hero-chakra {
+    transition: none;
+  }
+}
+
+/* =========================================
+   PHASE 7.2 — HERO PARALLAX
+========================================= */
+
+.hero-glow-one,
+.hero-glow-two,
+.hero-chakra {
+  transition: transform 0.25s ease-out;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-glow-one,
+  .hero-glow-two,
+  .hero-chakra {
+    transition: none;
+  }
+}
+
+/* =========================================
+   PHASE 7.3 — PREMIUM FIREWORKS
+========================================= */
+
+.firework {
+  position: absolute;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 8px #ff9933,
+    0 0 18px #ffffff,
+    0 0 30px #138808;
+
+  animation: firework-burst 1.4s ease-out forwards;
+
+  pointer-events: none;
+}
+
+@keyframes firework-burst {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+
+  15% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(8);
+  }
+}
+
+/* Extra glow inside celebration popup */
+
+.celebration-overlay::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(255, 153, 51, 0.08),
+    transparent 35%
+  );
+
+  pointer-events: none;
+}
+
+/* =========================================
+   PHASE 7.4 — MESSAGE COUNTER FEEDBACK
+========================================= */
+
+#characterCount {
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+#characterCount.counter-warning {
+  color: #ffcc33;
+}
+
+#characterCount.counter-danger {
+  color: #ff9933;
+
+  transform: scale(1.05);
+}
+
+#characterCount.counter-limit {
+  color: #ff5555;
+
+  font-weight: 800;
+
+  transform: scale(1.08);
+}
+/* =========================================
+   PHASE 7.5 — MOBILE NAVIGATION POLISH
+========================================= */
+
+@media (max-width: 768px) {
+  .nav-menu {
+    box-shadow:
+      0 20px 45px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .nav-link {
+    transition:
+      color 0.25s ease,
+      transform 0.25s ease,
+      background 0.25s ease;
+  }
+
+  .nav-link:active {
+    transform: scale(0.97);
+  }
+
+  .menu-toggle {
+    transition:
+      transform 0.25s ease,
+      background 0.25s ease;
+  }
+
+  .menu-toggle.open {
+    transform: rotate(90deg);
+  }
+}
+/* =========================================
+   PHASE 7.6 — MOBILE NAVIGATION FIX
+========================================= */
+
+@media (max-width: 768px) {
+  .nav-container {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+
+    width: min(260px, calc(100vw - 30px));
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 12px;
+
+    background: rgba(6, 16, 29, 0.96);
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 18px;
+
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    z-index: 1000;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 12px 14px;
+
+    border-radius: 10px;
+  }
+
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.06);
+  }
 }
