@@ -4013,3 +4013,251 @@ section {
     background: rgba(255, 255, 255, 0.06);
   }
 }
+/* =========================================
+   PHASE 8 — MOBILE CONTENT OPTIMIZATION
+========================================= */
+
+@media (max-width: 768px) {
+  /* ---------- ABOUT ---------- */
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .about-card {
+    width: 100%;
+  }
+
+  /* ---------- STATS ---------- */
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  /* ---------- HISTORY ---------- */
+
+  .timeline {
+    width: 100%;
+    padding: 10px 0 10px 22px;
+  }
+
+  .timeline::before {
+    left: 22px;
+    transform: none;
+  }
+
+  .timeline-item {
+    width: 100%;
+    margin: 0 0 45px 0;
+    padding-left: 42px;
+
+    display: block;
+  }
+
+  .timeline-item:nth-child(even) {
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .timeline-year {
+    position: relative;
+
+    width: 62px;
+    height: 62px;
+
+    margin-left: -31px;
+    margin-bottom: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+
+    z-index: 2;
+  }
+
+  .timeline-content {
+    width: 100%;
+    max-width: none;
+
+    padding: 22px 20px;
+    margin: 0;
+
+    text-align: left;
+  }
+
+  .timeline-content h3 {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .timeline-content p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* ---------- HEROES ---------- */
+
+  .heroes-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hero-card {
+    width: 100%;
+    min-width: 0;
+
+    padding: 26px 22px;
+
+    text-align: center;
+  }
+
+  .hero-avatar {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-card h3 {
+    font-size: 22px;
+  }
+
+  .hero-card span {
+    font-size: 13px;
+  }
+
+  .hero-card p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* ---------- CELEBRATION ---------- */
+
+  .flag-display {
+    width: min(90%, 360px);
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+
+  /* ---------- MESSAGE ---------- */
+
+  .message-box {
+    width: 100%;
+    padding: 28px 20px;
+  }
+}
+
+/* Very small phones */
+
+@media (max-width: 420px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    padding-left: 18px;
+  }
+
+  .timeline::before {
+    left: 18px;
+  }
+
+  .timeline-item {
+    padding-left: 34px;
+  }
+
+  .timeline-year {
+    width: 56px;
+    height: 56px;
+    margin-left: -28px;
+    font-size: 12px;
+  }
+
+  .timeline-content {
+    padding: 20px 17px;
+  }
+
+  .timeline-content h3 {
+    font-size: 19px;
+  }
+}
+/* =========================================
+   PHASE 5.2 — PREMIUM NAVBAR
+========================================= */
+
+.navbar {
+  background: rgba(6, 16, 29, 0.72);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(4, 11, 21, 0.9);
+
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.3),
+    0 1px 0 rgba(255, 153, 51, 0.08);
+}
+
+.nav-link {
+  position: relative;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.nav-link:hover {
+  transform: translateY(-2px);
+}
+
+.nav-link::after {
+  height: 2px;
+  border-radius: 10px;
+
+  background: linear-gradient(90deg, #ff9933, #ffffff, #138808);
+
+  box-shadow: 0 0 10px rgba(255, 153, 51, 0.25);
+
+  transition:
+    width 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* Mobile menu button */
+.menu-toggle {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 153, 51, 0.3);
+}

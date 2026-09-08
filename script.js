@@ -354,6 +354,8 @@
 
       celebrationOverlay.classList.add("show");
 
+      celebrationOverlay.removeAttribute("inert");
+
       celebrationOverlay.setAttribute("aria-hidden", "false");
 
       document.body.classList.add("no-scroll");
@@ -369,6 +371,8 @@
       celebrationOverlay.classList.remove("show");
 
       celebrationOverlay.setAttribute("aria-hidden", "true");
+
+      celebrationOverlay.setAttribute("inert", "");
 
       document.body.classList.remove("no-scroll");
     }
