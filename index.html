@@ -31,7 +31,7 @@
     ========================== -->
     <header class="navbar" id="navbar">
       <div class="nav-container">
-        <a href="#home" class="logo">
+        <a href="#home" class="logo" aria-label="India 80 Home">
           <span class="logo-flag">🇮🇳</span>
           <span>INDIA <strong>80</strong></span>
         </a>
@@ -39,15 +39,17 @@
         <button
           class="menu-toggle"
           id="menuToggle"
+          type="button"
           aria-label="Open navigation menu"
           aria-expanded="false"
+          aria-controls="navMenu"
         >
           <span></span>
           <span></span>
           <span></span>
         </button>
 
-        <nav class="nav-menu" id="navMenu">
+        <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
           <a href="#home" class="nav-link active"> Home </a>
 
           <a href="#about" class="nav-link"> About </a>
@@ -104,7 +106,11 @@
 
           <!-- COUNTDOWN -->
 
-          <div class="countdown" id="countdown">
+          <div
+            class="countdown"
+            id="countdown"
+            aria-label="Countdown to Independence Day"
+          >
             <div class="countdown-box">
               <span id="days">00</span>
               <small>Days</small>
@@ -428,7 +434,7 @@
               and guide us towards a stronger tomorrow.
             </p>
 
-            <div class="flag-display">
+            <div class="flag-display" aria-label="Indian Tricolor">
               <div class="flag-stripe saffron"></div>
 
               <div class="flag-stripe white">
@@ -439,11 +445,11 @@
             </div>
 
             <div class="celebration-actions">
-              <button class="btn btn-primary" id="celebrateBtn">
+              <button class="btn btn-primary" id="celebrateBtn" type="button">
                 Celebrate 🇮🇳
               </button>
 
-              <button class="btn btn-outline" id="musicBtn">
+              <button class="btn btn-outline" id="musicBtn" type="button">
                 🔊 Play Music
               </button>
             </div>
@@ -488,7 +494,6 @@
                 <textarea
                   id="userMessage"
                   name="message"
-                  rows="5"
                   rows="5"
                   maxlength="300"
                   placeholder="Write your Independence Day message..."
@@ -609,54 +614,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-
-<!-- =========================
-     FOOTER
-========================== -->
-<footer class="footer">
-  <div class="footer-tricolour">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-  <div class="footer-container">
-    <div class="footer-brand">
-      <div class="footer-logo">🇮🇳</div>
-
-      <h2>Jai Hind!</h2>
-
-      <p>Celebrating 80 years of India's Independence.</p>
-
-      <p class="footer-tagline">Vande Mataram 🇮🇳</p>
-    </div>
-
-    <div class="footer-links">
-      <h3>Quick Links</h3>
-
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#history">History</a>
-      <a href="#heroes">Heroes</a>
-      <a href="#celebration">Celebration</a>
-      <a href="#message">Message</a>
-    </div>
-
-    <div class="footer-message">
-      <h3>Our Pride</h3>
-
-      <p>
-        Let us remember our heroes, celebrate our freedom and build a stronger
-        India together.
-      </p>
-
-      <div class="footer-quote">"Unity in Diversity"</div>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2027 Independence Day Celebration</p>
-
-    <p>Made with ❤️ for India 🇮🇳</p>
-  </div>
-</footer>
